@@ -1,10 +1,10 @@
 import React from 'react'
 import { HiHome } from 'react-icons/hi';
-import {Link, Button} from '@mui/material'
+import { Link, Button } from '@mui/material'
 
-const Header = () => {
+const Header = ({ showMap, setShowMap }) => {
     return (
-        <header className='py-5 flex items-center'>
+        <header className='py-6 flex items-center'>
             <h1 className='text-xl grow'>
                 <a href="https://nextjs.org" className='flex items-center font-semibold'>
                     <HiHome className='mr-[5px]' />
@@ -14,11 +14,9 @@ const Header = () => {
             <nav className='flex items-center'>
                 <ul className='flex gap-4'>
                     <li>
-                    <Link underline='none'>
-                            <Button variant='text' color='primary'>
-                                Contact
-                            </Button>
-                        </Link>
+                        <Button onClick={() => setShowMap(!showMap  )} variant='outlined' color='primary' className='p-0'>
+                            Map
+                        </Button>
                     </li>
                 </ul>
             </nav>

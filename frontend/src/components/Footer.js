@@ -3,7 +3,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <Box component='footer'>
+        <Box component='footer' className='py-5 text-xs'>
             <a
                 href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
                 target="_blank"
@@ -12,7 +12,7 @@ const Footer = () => {
                 Powered by{' '}
                 <span >
                     {/* <Image src="/vercel.svg" alt="Vercel Logo" width={100} height={50} /> */}
-                    Patrick V.
+                    PV 
                 </span>
             </a>
         </Box>

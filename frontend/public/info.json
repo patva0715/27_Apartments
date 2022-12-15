@@ -1,0 +1,21 @@
+{
+    "rooms":[{
+        "name":"Deluxe",
+        "measurement":300,
+        "price":2000,
+        "bed":1,
+        "tv":true
+    },{
+        "name":"Premium",
+        "measurement":220,
+        "price":1700,
+        "bed":1,
+        "tv":false
+    },{
+        "name":"Regular",
+        "measurement":150,
+        "price":1500,
+        "bed":1,
+        "tv":false
+    }]
+}

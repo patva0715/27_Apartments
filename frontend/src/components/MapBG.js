@@ -1,10 +1,10 @@
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import React from 'react';
 const containerStyle = {
     width: '100vw',
-    height: '100vh',
-    zIndex:'0',
-    opacity:'.5'
+    height: '102vh',
+    zIndex: '0',
+    // opacity: '.5'
 };
 
 const center = {
@@ -14,10 +14,10 @@ const center = {
 const mapStyle = [
     {
         "stylers": [
-          { "visibility": "simplified" },
-          { "saturation": -100 }
+            { "visibility": "simplified" },
+            { "saturation": -100 }
         ]
-      },
+    },
     {
         "elementType": "geometry",
         "stylers": [
@@ -135,29 +135,29 @@ const mapStyle = [
         "featureType": "road.highway",
         "elementType": "geometry.stroke",
         "stylers": [
-          {
-            "weight": 4
-          }
+            {
+                "weight": 4
+            }
         ]
-      },
-      {
+    },
+    {
         "featureType": "road.local",
         "stylers": [
-          {
-            "visibility": "on"
-          }
+            {
+                "visibility": "on"
+            }
         ]
-      },
-      {
+    },
+    {
         "featureType": "road.local",
         "elementType": "geometry.fill",
         "stylers": [
-          {
-            "weight": 1
-          }
+            {
+                "weight": 1
+            }
         ]
-      },
-      
+    },
+
 
 
 
@@ -253,7 +253,7 @@ const mapStyle = [
     }
 ]
 
-function MyComponent() {
+function MyComponent({ showMap }) {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyBbqswcDn_ThMrI9M0OdlY6PuefdcnzCIw"
@@ -265,35 +265,44 @@ function MyComponent() {
         // This is just an example of getting and using the map instance!!! don't just blindly copy!
         // const bounds = new window.google.maps.LatLngBounds(center);
         // map.fitBounds(bounds);
-        map.setZoom(17)
-
-        setMap(map)
-    }, [])
+        // map.setZoom(showMap?14:17)
+        // setMap(map)
+    }, [showMap])
 
     const onUnmount = React.useCallback(function callback(map) {
         setMap(null)
     }, [])
 
     return isLoaded ? (
-        <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={17}
-            onLoad={onLoad}
-            onUnmount={onUnmount}
-            options={{
-                styles: mapStyle,
-                fullscreenControl: false,
-                zoomControl: false,
-                streetViewControl: false,
-                mapTypeControl: false,
-                disableDoubleClickZoom: true,
-                scrollwheel: false
-            }}
-        >
-            { /* Child components, such as markers, info windows, etc. */}
-            <></>
-        </GoogleMap>
+        <div style={{ opacity: showMap ? 1 : .4 }} className='duration-300'>
+            <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={center}
+                zoom={showMap?14:17}
+                onLoad={onLoad}
+                onUnmount={onUnmount}
+                options={{
+                    styles: mapStyle,
+                    fullscreenControl: false,
+                    zoomControl: false,
+                    streetViewControl: false,
+                    mapTypeControl: false,
+                    disableDoubleClickZoom: true,
+                    scrollwheel: false
+                }}
+            >
+                { /* Child components, such as markers, info windows, etc. */}
+                <>
+                    <Marker
+                        position={{
+                            lat: 17.866945,
+                            lng: 120.456615
+                        }}
+                        // label='Apartment'
+                         />
+                </>
+            </GoogleMap>
+        </div>
     ) : <></>
 }
 
