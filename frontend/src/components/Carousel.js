@@ -18,8 +18,8 @@ const Carousel = () => {
             />
 
             <div className='absolute z-10 p-3 md:p-10 duration-300 w-full'>
-                <h1 className='text-left text-[5vw] lg:text-[60px] font-bold leading-none tracking-wider opacity-50'>Spaces<br />for rent</h1>
-                <p className='text-left mt-1 opacity-40 text-[2vw] lg:text-[21px]'>bed | kitchen | bath</p>
+                <h1 className='text-left text-[6.45vw] lg:text-[60px] font-bold leading-none tracking-wider opacity-50'>Spaces<br />for rent</h1>
+                <p className='text-left mt-1 opacity-40 text-[3vw] lg:text-[21px]'>bed | kitchen | bath</p>
             </div>
 
             <div className='hidden md:hidden flex-col absolute z-0 right-3 top-3 gap-3'>

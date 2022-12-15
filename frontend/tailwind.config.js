@@ -6,8 +6,11 @@ module.exports = {
 
   ],
   theme: {
+
     extend: {
-    
+      colors: {
+        black: '#1f1f1f'
+      },
     },
     fontSize: {
       sm: ['3.2vw', '3.6vw'],

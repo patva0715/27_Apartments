@@ -1,18 +1,18 @@
 {
     "rooms":[{
-        "name":"Deluxe",
+        "name":"Option 1",
         "measurement":300,
         "price":2000,
         "bed":1,
         "tv":true
     },{
-        "name":"Premium",
+        "name":"Option 2",
         "measurement":220,
         "price":1700,
         "bed":1,
         "tv":false
     },{
-        "name":"Regular",
+        "name":"Option 3",
         "measurement":150,
         "price":1500,
         "bed":1,

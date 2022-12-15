@@ -5,7 +5,7 @@ import {BsPinMapFill, BsPhone} from 'react-icons/bs'
 import {AiOutlineThunderbolt} from 'react-icons/ai'
 const Footer = () => {
     return (
-        <footer className='py-7 text-xs bg-[#222] mt-10 text-white'>
+        <footer className='py-7 text-xs bg-black mt-10 text-white'>
             <Container maxWidth='md' className='text-sm lg:text-[15px] lg:leading-[18px] opacity-80 px-6'>
                 <div className='flex flex-col gap-2 lg:gap-[10px]'>
                     <div className='flex items-center gap-2'>

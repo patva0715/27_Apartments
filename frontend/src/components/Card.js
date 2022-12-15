@@ -12,13 +12,13 @@ const Card = ({ room }) => {
                     src='https://images.pexels.com/photos/6301168/pexels-photo-6301168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
                 />
             </Box> */}
-                <h2 className='text-md lg:text-[25px] lg:leading-[32px] font-semibold mb-1'>{room.name}</h2>
-                <p className='text-sm lg:text-[17px] lg:leading-[22px]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo praesentium molestiae quos impedit corrupti nesciunt?</p>
-                <div className=' flex gap-1 flex-wrap mt-1'>
-                    <div className='p-[1vw] lg:p-[5px] text-slate-500 bg-[#eee] rounded-md flex ' >
+                <h2 className='text-md lg:text-[20px] lg:leading-[28px] font-semibold mb-1'>{room.name}</h2>
+                <p className='pl-2 text-md lg:text-[20px] lg:leading-[28px] opacity-50'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo praesentium molestiae quos impedit corrupti nesciunt?</p>
+                <div className='pl-2 flex gap-1 flex-wrap mt-1'>
+                    <div className='p-[1vw] lg:p-[5px] text-slate-500 bg-[#eee] rounded-sm flex ' >
                         <span className='text-sm lg:text-[16px] lg:leading-[20px]'><span className='font-semibold'>₱{room.price}</span> / night</span>
                     </div>
-                    <div className='p-[1vw] lg:p-[5px] text-slate-500 bg-[#eee] rounded-md flex ' >
+                    <div className='p-[1vw] lg:p-[5px] text-slate-500 bg-[#eee] rounded-sm flex ' >
                         <span className='text-sm lg:text-[16px] lg:leading-[20px]'>{room.measurement}m sq</span>
                     </div>
                     {/* <div className='p-[1vw] lg:p-[5px] text-slate-500 bg-[#eee] rounded-md flex ' >
