@@ -41,7 +41,7 @@ export default function Home({ showMap, setShowMap }) {
               <Divider title='Amenities' />
               <div className=' p-4 rounded-md md:rounded-xl flex w-full md:w-[40%] flex-wrap border-2 bg-white bg-opacity-70'>
                 {info.services.map((service, idx) => (
-                  <ServiceCard service={service} />
+                  <ServiceCard service={service} key={idx} />
                 ))}
               </div>
             </div>
@@ -58,7 +58,7 @@ export default function Home({ showMap, setShowMap }) {
                   <div className='border-2 p-4 rounded-md md:rounded-xl flex flex-col overflow-hidden bg-white bg-opacity-70 h-full'>
                     <h2 className='text-md lg:text-[25px] lg:leading-[32px] font-semibold mb-1'>Amenities</h2>
                     {info.services.map((service, idx) => (
-                      <ServiceCard service={service} />
+                      <ServiceCard service={service} key={idx}/>
                     ))}
                   </div>
                 </div>
