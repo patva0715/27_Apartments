@@ -24,7 +24,7 @@ const Carousel = () => {
 
             <div className='flex flex-col absolute z-20 right-3 top-3 gap-3'>
                 {[0,1,2].map((item, idx) => (
-                    <button onClick={()=>handleChange(item)} className='border-white border-opacity-30 border-2 w-[11vw] md:w-[4rem] aspect-square flex items-center justify-center rounded-md overflow-hidden'>
+                    <button key={idx} onClick={()=>handleChange(item)} className='border-white border-opacity-30 border-2 w-[11vw] md:w-[4rem] aspect-square flex items-center justify-center rounded-md overflow-hidden'>
                         <img
                             className='w-full h-full object-cover'
                             src='https://images.pexels.com/photos/6301168/pexels-photo-6301168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
