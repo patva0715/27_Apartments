@@ -5,7 +5,7 @@ import {FiMap} from 'react-icons/fi'
 const Header = ({ showMap, setShowMap }) => {
     return (
         <header className={` ${showMap?'bg-black text-white':'text-black'} duration-300`}>
-            <Container maxWidth='md' className={`py-4 flex flex-nowrap items-center`}>
+            <div className={`max-w-[900px] mx-auto px-2 py-4 flex flex-nowrap items-center`}>
                 <h1 className='text-[5vw] md:text-[30px] grow'>
                     <a href="https://nextjs.org" className='flex items-center font-semibold'>
                         <HiHome className='mr-[5px]' />
@@ -22,7 +22,7 @@ const Header = ({ showMap, setShowMap }) => {
                         </li>
                     </ul>
                 </nav>
-            </Container>
+            </div>
 
         </header>
     )
