@@ -1,5 +1,6 @@
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import React from 'react';
+import MapInfo from './MapInfo';
 const containerStyle = {
     width: '100vw',
     height: '102vh',
@@ -275,10 +276,11 @@ function MyComponent({ showMap }) {
 
     return isLoaded ? (
         <div style={{ opacity: showMap ? 1 : .4 }} className='duration-300'>
+            <MapInfo />
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
-                zoom={showMap?14:17}
+                zoom={showMap ? 10 : 17}
                 onLoad={onLoad}
                 onUnmount={onUnmount}
                 options={{
@@ -298,8 +300,15 @@ function MyComponent({ showMap }) {
                             lat: 17.866945,
                             lng: 120.456615
                         }}
-                        // label='Apartment'
-                         />
+                        label='Home'
+                    />
+                    <Marker
+                        position={{
+                            lat: 17.570527441418868,
+                            lng: 120.38699708621502
+                        }}
+                        label='Vigan'
+                    />
                 </>
             </GoogleMap>
         </div>

@@ -10,8 +10,8 @@ module.exports = {
     
     },
     fontSize: {
-      sm: ['2vw', '2.4vw'],
-      md: ['2.4vw', '2.7vw'],
+      sm: ['3.2vw', '3.6vw'],
+      md: ['4.2vw', '4.6vw'],
       base: ['16px', '24px'],
       lg: ['20px', '28px'],
       xl: ['24px', '32px'],

@@ -17,5 +17,18 @@
         "price":1500,
         "bed":1,
         "tv":false
+    }],
+    "services":[{
+        "name":"kitchen"
+    },{
+        "name":"shower"
+    },{
+        "name":"wifi"
+    },{
+        "name":"king bed"
+    },{
+        "name":"breakfast"
+    },{
+        "name":"free parking"
     }]
 }
