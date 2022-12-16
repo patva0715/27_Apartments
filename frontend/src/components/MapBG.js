@@ -280,7 +280,7 @@ function MyComponent({ showMap }) {
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
-                zoom={showMap ? 10 : 17}
+                zoom={showMap ? 16 : 17}
                 onLoad={onLoad}
                 onUnmount={onUnmount}
                 options={{

@@ -1,13 +1,12 @@
 @tailwind base;
-/* @tailwind components; */
+@tailwind components;
 @tailwind utilities;
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -24,6 +23,24 @@ a {
   height:100vh;
   background-image: linear-gradient(to bottom, rgba(230,230,230,1) 0%,rgba(230,230,230,1) 30%, rgba(210,220,210,.1) 100%);
 
+}
+/* button:focus{
+  outline: none;
+  box-shadow: none;
+}
+button:active{
+  outline: none;
+  box-shadow: none;
+} */
+button{
+  /* display: none; */
+}
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 /* @media (prefers-color-scheme: dark) {
   html {
