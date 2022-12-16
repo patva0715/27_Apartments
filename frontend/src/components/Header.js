@@ -15,9 +15,9 @@ const Header = ({ showMap, setShowMap }) => {
                 <nav className='flex items-center'>
                     <ul className='flex gap-4'>
                         <li>
-                            <button onClick={() => setShowMap(!showMap)} className='p-1 flex items-center '>
-                                <FiMap className='mr-1'/>
-                                <span className=''>{showMap?'Close Map':'Map'}</span>
+                            <button onClick={() => setShowMap(!showMap)} className='p-1 flex items-center duration-300'>
+                                <FiMap className='mr-1 '/>
+                                <span className=''>{showMap?'Close':'Map'}</span>
                             </button>
                         </li>
                     </ul>

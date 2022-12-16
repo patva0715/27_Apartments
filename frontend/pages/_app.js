@@ -15,14 +15,17 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
       </Head>
-      <Box className='fixed top-0 bottom-0 w-full z-[0]'>
-        <MapBG showMap={showMap} />
-      </Box>
-      <Box id='gradientBg' style={{ opacity: showMap ? 0 : 1 }} />
 
-      <Box className='relative z-10'>
+      <MapBG showMap={showMap} />
+      <Box id='gradientBg' style={{ display: showMap ? 'none' : 'block' }} />
+
+      <Box className='relative z-20'>
         <Component {...pageProps} showMap={showMap} setShowMap={setShowMap} />
       </Box>
+
+
+
+
 
     </>
 

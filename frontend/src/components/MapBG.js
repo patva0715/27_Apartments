@@ -1,11 +1,62 @@
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import React from 'react';
+import React, { useState } from 'react';
 import MapInfo from './MapInfo';
+
+const locationSets = [{
+    title: 'near',
+    locations: [{
+        name: '7-Eleven',
+        coordinate: {
+            lat: 17.86694872286288,
+            lng: 120.45789897915579
+        },
+        icon: 'https://img.icons8.com/external-tal-revivo-color-tal-revivo/30/null/external-7-eleven-is-your-go-to-convenience-store-for-food-snacks-hot-and-cold-beverages-food-color-tal-revivo.png'
+    }, {
+        name: 'Infinitea',
+        coordinate: {
+            lat: 17.859304849251853,
+            lng: 120.45403437541616
+        },
+        icon: '../../public/icons/infinitea.png'
+    }, {
+        name: 'Cabantalan Beach',
+        coordinate: {
+            lat: 17.87617348489904,
+            lng: 120.44916644455488
+        }
+    }]
+}, {
+    title: 'far',
+    locations: [{
+        name: 'Vigan',
+        coordinate: {
+            lat: 17.570527441418868,
+            lng: 120.38699708621502
+        }
+    }, {
+        name: 'Sand Dunes',
+        coordinate: {
+            lat: 18.140676539152672,
+            lng: 120.51726928867616
+        }
+    }, {
+        name: 'Poro Island',
+        coordinate: {
+            lat: 17.79514257832246,
+            lng: 120.38836597572376
+        }
+    }, {
+        name: 'Robinson Supermarket',
+        coordinate: {
+            lat: 18.179651208781834,
+            lng: 120.59318549918656
+        }
+    }]
+}]
 const containerStyle = {
     width: '100vw',
     height: '102vh',
     zIndex: '0',
-    // opacity: '.5'
 };
 
 const center = {
@@ -255,63 +306,88 @@ const mapStyle = [
 ]
 
 function MyComponent({ showMap }) {
+    const [activeIndex, setActiveIndex] = useState(0)
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyBbqswcDn_ThMrI9M0OdlY6PuefdcnzCIw"
     })
 
-    const [map, setMap] = React.useState(null)
+    const [map, setMap] = useState(null)
 
     const onLoad = React.useCallback(function callback(map) {
         // This is just an example of getting and using the map instance!!! don't just blindly copy!
         // const bounds = new window.google.maps.LatLngBounds(center);
         // map.fitBounds(bounds);
         // map.setZoom(showMap?14:17)
-        // setMap(map)
+        setMap(map)
     }, [showMap])
 
     const onUnmount = React.useCallback(function callback(map) {
         setMap(null)
     }, [])
 
+    const handleZoom = () => {
+        setActiveIndex(state => (state + 1) % 2)
+        var bounds = new google.maps.LatLngBounds();
+        for (var i = 0; i < locationSets[(activeIndex + 1) % 2].locations.length; i++) {
+            bounds.extend(locationSets[(activeIndex + 1) % 2].locations[i].coordinate);
+        }
+        bounds.extend(center)
+
+        map.fitBounds(bounds);
+        // map.setZoom(1)
+    }
+
     return isLoaded ? (
-        <div style={{ opacity: showMap ? 1 : .4 }} className='duration-300'>
-            <MapInfo />
-            <GoogleMap
-                mapContainerStyle={containerStyle}
-                center={center}
-                zoom={showMap ? 16 : 17}
-                onLoad={onLoad}
-                onUnmount={onUnmount}
-                options={{
-                    styles: mapStyle,
-                    fullscreenControl: false,
-                    zoomControl: false,
-                    streetViewControl: false,
-                    mapTypeControl: false,
-                    disableDoubleClickZoom: true,
-                    scrollwheel: false
-                }}
-            >
-                { /* Child components, such as markers, info windows, etc. */}
-                <>
-                    <Marker
-                        position={{
-                            lat: 17.866945,
-                            lng: 120.456615
-                        }}
-                        label='Home'
-                    />
-                    <Marker
-                        position={{
-                            lat: 17.570527441418868,
-                            lng: 120.38699708621502
-                        }}
-                        label='Vigan'
-                    />
-                </>
-            </GoogleMap>
-        </div>
+        <>
+            <div style={{ opacity: showMap ? 1 : .4 }} className='duration-300 fixed z-10'>
+                {/* <MapInfo /> */}
+                <GoogleMap
+                    mapContainerStyle={containerStyle}
+                    center={center}
+                    zoom={showMap ? 16 : 17}
+                    onLoad={onLoad}
+                    onUnmount={onUnmount}
+                    options={{
+                        styles: mapStyle,
+                        fullscreenControl: false,
+                        zoomControl: false,
+                        streetViewControl: false,
+                        mapTypeControl: false,
+                        disableDoubleClickZoom: true,
+                        scrollwheel: false
+                    }}
+                >
+                    { /* Child components, such as markers, info windows, etc. */}
+                    <>
+                        {locationSets[activeIndex].locations.map((location, index) => (
+                            <Marker
+                                icon={{
+                                    scaledSize: new google.maps.Size(30, 30),
+                                    url: location.icon || 'https://img.icons8.com/office/50/null/100-percents.png',
+                                }}
+                                position={{
+                                    lat: location.coordinate.lat,
+                                    lng: location.coordinate.lng
+                                }}
+                                label={location.name}
+                                key={index}
+                            />
+                        ))}
+                        <Marker
+                            icon={{
+                                url: 'https://img.icons8.com/ios-glyphs/30/exterior.png',
+                                scaledSize: new google.maps.Size(25, 25)
+                            }}
+                            position={center} />
+                    </>
+                </GoogleMap>
+
+            </div>
+            {showMap ?
+                <button className='p-2 fixed bottom-4 left-4 z-30 bg-black text-white rounded-md' onClick={handleZoom}>Next</button>
+                : <></>}
+        </>
     ) : <></>
 }
 

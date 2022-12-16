@@ -24,7 +24,7 @@ export default function Home({ showMap, setShowMap }) {
       </Head>
       <Header showMap={showMap} setShowMap={setShowMap} />
 
-      <Container maxWidth='md' className='bg-red-0'>
+      <Container maxWidth='md' className='' >
 
 
         <Fade in={!showMap} timeout={500}>
@@ -68,7 +68,7 @@ export default function Home({ showMap, setShowMap }) {
         </Fade>
       </Container>
       <Overlay showOverlay={showOverlay} setShowOverlay={setShowOverlay} />
-      <Footer />
+      {/* <Footer /> */}
 
     </>
   )
