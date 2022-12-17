@@ -10,7 +10,7 @@ const Footer = () => {
         <footer className='py-7 text-xs mt-10 text-black'>
             <Container maxWidth='md' className='text-sm lg:text-[15px] lg:leading-[18px] opacity-80 px-8'>
                 <div className='flex flex-col gap-2 lg:gap-[10px]'>
-                    <Link href='menu' className='flex items-center'>
+                    <Link href='menu' className='flex items-center underline'>
                         <GiKnifeFork className='mr-2'/>
                         Food Menu
                     </Link>
@@ -23,13 +23,13 @@ const Footer = () => {
                         <span>0906558186</span>
                     </div>
                     <a
-                        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                    href='https://www.patrickvee.com/'
                         target="_blank"
                         rel="noopener noreferrer"
-                        className='flex items-center gap-2'
+                        className='flex items-center gap-2 underline'
                     >
                         <AiOutlineThunderbolt />
-                        <span>by Pv</span>
+                        <span>by pv.com</span>
                     </a>
                 </div>
             </Container>
