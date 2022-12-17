@@ -1,8 +1,26 @@
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import MapInfo from './MapInfo';
 
 const locationSets = [{
+    title: 'close',
+    locations: [{
+        name: '',
+        coordinate: {
+            lat: 17.86694872286288,
+            lng: 120.45789897915579
+        },
+        icon: 'https://img.icons8.com/external-tal-revivo-color-tal-revivo/30/null/external-7-eleven-is-your-go-to-convenience-store-for-food-snacks-hot-and-cold-beverages-food-color-tal-revivo.png'
+    },{
+        name:'Flying V',
+        coordinate:{
+            lat: 17.867563350402587, 
+            lng: 120.45865314365042
+        }
+    },
+]
+}
+    , {
     title: 'near',
     locations: [{
         name: '7-Eleven',
@@ -58,7 +76,6 @@ const containerStyle = {
     height: '102vh',
     zIndex: '0',
 };
-
 const center = {
     lat: 17.866945,
     lng: 120.456615
@@ -307,12 +324,11 @@ const mapStyle = [
 
 function MyComponent({ showMap }) {
     const [activeIndex, setActiveIndex] = useState(0)
+    const [map, setMap] = useState(null)
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyBbqswcDn_ThMrI9M0OdlY6PuefdcnzCIw"
     })
-
-    const [map, setMap] = useState(null)
 
     const onLoad = React.useCallback(function callback(map) {
         // This is just an example of getting and using the map instance!!! don't just blindly copy!
@@ -327,14 +343,15 @@ function MyComponent({ showMap }) {
     }, [])
 
     const handleZoom = () => {
-        setActiveIndex(state => (state + 1) % 2)
+        setActiveIndex(state => (state + 1) % locationSets.length)
         var bounds = new google.maps.LatLngBounds();
-        for (var i = 0; i < locationSets[(activeIndex + 1) % 2].locations.length; i++) {
-            bounds.extend(locationSets[(activeIndex + 1) % 2].locations[i].coordinate);
+        for (var i = 0; i < locationSets[(activeIndex + 1) % locationSets.length].locations.length; i++) {
+            bounds.extend(locationSets[(activeIndex + 1) % locationSets.length].locations[i].coordinate);
         }
         bounds.extend(center)
 
         map.fitBounds(bounds);
+        map.setCenter(center)
         // map.setZoom(1)
     }
 
@@ -363,7 +380,7 @@ function MyComponent({ showMap }) {
                         {locationSets[activeIndex].locations.map((location, index) => (
                             <Marker
                                 icon={{
-                                    scaledSize: new google.maps.Size(30, 30),
+                                    scaledSize: new google.maps.Size(20, 20),
                                     url: location.icon || 'https://img.icons8.com/office/50/null/100-percents.png',
                                 }}
                                 position={{

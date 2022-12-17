@@ -1,34 +1,34 @@
 {
     "rooms":[{
-        "name":"Option 1",
-        "measurement":300,
-        "price":2000,
-        "bed":1,
-        "tv":true
-    },{
-        "name":"Option 2",
-        "measurement":220,
-        "price":1700,
-        "bed":1,
-        "tv":false
-    },{
-        "name":"Option 3",
-        "measurement":150,
+        "name":"Regular",
+        "measurement":40,
         "price":1500,
-        "bed":1,
-        "tv":false
-    }],
+        "bed":"King Bed",
+        "tv":false,
+        "desc":"Room with a private bathroom & kitchen - refrigerator, dining table and TV. Includes all basic amenities."
+    },{
+        "name":"Family",
+        "measurement":55,
+        "price":3000,
+        "bed":"Cali King Bed",
+        "tv":true,
+        "desc":"Everything our regular room offers plus a balcony and"
+    }
+   
+],
     "services":[{
         "name":"kitchen"
     },{
         "name":"shower"
     },{
         "name":"wifi"
-    },{
-        "name":"king bed"
-    },{
+    }
+
+    ,{
         "name":"breakfast"
     },{
-        "name":"free parking"
+        "name":"parking"
+    },{
+        "name":"aircon"
     }]
 }

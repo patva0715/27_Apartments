@@ -12,9 +12,11 @@ import { useState } from 'react';
 import Overlay from '../src/components/Overlay';
 import Divider from '../src/components/Divider';
 import ServiceCard from '../src/components/ServiceCard';
+import Gallery from '../src/components/Gallery';
 
 export default function Home({ showMap, setShowMap }) {
   const [showOverlay, setShowOverlay] = useState(false)
+  const [showGallery, setShowGallery] = useState(false)
   return (
     <>
       <Head>
@@ -51,14 +53,14 @@ export default function Home({ showMap, setShowMap }) {
               <div className='flex gap-1'>
                 <div className='basis-[70%] grow flex flex-col gap-1 border-2 bg-white bg-opacity-70 rounded-md md:rounded-xl'>
                   {info.rooms.map((room, idx) => (
-                    <Card room={room} key={idx} />
+                    <Card room={room} key={idx} setShowGallery={setShowGallery} />
                   ))}
                 </div>
                 <div className='basis-[15%] hidden md:block'>
                   <div className='border-2 p-4 rounded-md md:rounded-xl flex flex-col overflow-hidden bg-white bg-opacity-70 h-full'>
                     <h2 className='text-md lg:text-[25px] lg:leading-[32px] font-semibold mb-1'>Amenities</h2>
                     {info.services.map((service, idx) => (
-                      <ServiceCard service={service} key={idx}/>
+                      <ServiceCard service={service} key={idx} />
                     ))}
                   </div>
                 </div>
@@ -68,7 +70,8 @@ export default function Home({ showMap, setShowMap }) {
         </Fade>
       </Container>
       <Overlay showOverlay={showOverlay} setShowOverlay={setShowOverlay} />
-      {/* <Footer /> */}
+      <Gallery active={{}} showGallery={showGallery} setShowGallery={setShowGallery}/>
+      <Footer />
 
     </>
   )

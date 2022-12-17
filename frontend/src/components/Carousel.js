@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useTransition, animated, AnimatedProps, useSpringRef } from '@react-spring/web'
 import {BsFillArrowLeftCircleFill,BsFillArrowRightCircleFill} from 'react-icons/bs'
 const images = [
     'https://images.pexels.com/photos/430216/pexels-photo-430216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     'https://images.pexels.com/photos/6301168/pexels-photo-6301168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
 ]
-const className = 'object-cover absolute w-full top-[-25%] grayscale-[.8]'
+const className = 'object-cover absolute w-full h-full top-[-0%] grayscale-[.8]'
 const Images = [
     ({ style }) => <animated.img style={{ ...style, zIndex:0 }} className={className}
         src='https://images.pexels.com/photos/430216/pexels-photo-430216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
@@ -20,7 +20,10 @@ const Images = [
 ]
 const Carousel = () => {
     const [index, set] = useState(0)
+    const intervalRef=useRef(null)
     const handleChange = (move) =>{
+        if (intervalRef.current)clearInterval(intervalRef.current)
+        intervalRef.current=setInterval(()=>set(state=>(state+1)%3),5000)
         const loop = index===0 || index===2?true:false
         if (loop && move===1 && index===2) return set(0)
         else if (loop && move===-1 && index===0) return set(2)
@@ -38,11 +41,11 @@ const Carousel = () => {
         transRef.start()
     }, [index])
     useEffect(()=>{
-        setInterval(()=>set(state=>(state+1)%3),5000)
-
+        intervalRef.current=setInterval(()=>set(state=>(state+1)%3),5000)
+        return (()=>clearInterval(intervalRef.current))
     },[])
     return (
-        <div className='aspect-[2/1] w-full relative overflow-hidden rounded-md md:rounded-2xl'>
+        <div className='aspect-[8/5] w-full relative overflow-hidden rounded-md md:rounded-2xl'>
             {transitions((style, i) => {
                 const Image = Images[i]
                 return <Image style={style} />
@@ -64,7 +67,7 @@ const Carousel = () => {
 
             </div>
 
-            <div className='absolute top-4 z-20 right-4 flex gap-2 text-black text-md lg:text-[25px]'>
+            <div className='absolute top-4 z-20 right-4 flex gap-2 text-black text-[2rem] lg:text-[30px]'>
                 <button onClick={()=>handleChange(-1)}><BsFillArrowLeftCircleFill/></button>
                 <button onClick={()=>handleChange(1)}><BsFillArrowRightCircleFill/></button>
             </div>

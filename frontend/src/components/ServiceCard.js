@@ -1,14 +1,15 @@
 import React from 'react'
 import { GiKnifeFork } from 'react-icons/gi'
 import { FaWifi, FaShower, FaBed,FaCar } from 'react-icons/fa'
-import { BiDish, BiBath, BiBed, BiCar } from 'react-icons/bi'
+import { BiDish, BiBath, BiBed, BiCar,BiWind } from 'react-icons/bi'
 const iconMap = {
     "kitchen": <GiKnifeFork />,
     "shower": <BiBath />,
     "wifi": <FaWifi />,
-    "king bed": <BiBed />,
+    "1 Bed": <BiBed />,
     "breakfast": <BiDish />,
-    "free parking": <BiCar />,
+    "parking": <BiCar />,
+    "aircon": <BiWind/>
 }
 const ServiceCard = ({ service }) => {
     return (
