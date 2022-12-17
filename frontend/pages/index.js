@@ -28,7 +28,6 @@ export default function Home({ showMap, setShowMap }) {
 
       <Container maxWidth='md' className='' >
 
-
         <Fade in={!showMap} timeout={500}>
           <main>
             {/* DIVIDER HERO IMAGE */}

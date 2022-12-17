@@ -14,7 +14,7 @@ const Card = ({ room, setShowGallery }) => {
             </Box> */}
             <div className='flex items-center'>
                 <h2 className='text-md lg:text-[20px] lg:leading-[28px] font-semibold mb-1'>{room.name}</h2>
-                <button onClick={() => setShowGallery(true)} className='text-blue-400 ml-2'>View</button>
+                <button onClick={() => setShowGallery(true)} className='text-[1rem] text-blue-400 ml-2'>View</button>
                 </div>
             <h2 className='pl-2 text-md lg:text-[20px] lg:leading-[28px] opacity-50 mt-2'>{room.desc||'Lorem ipsum dolor sit amet consectetur, adipisicing elit.' }</h2>
             <div className='pl-2 flex gap-1 flex-wrap mt-2'>

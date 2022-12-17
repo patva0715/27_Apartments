@@ -11,7 +11,7 @@ const Gallery = ({showGallery, setShowGallery}) => {
     return (
         <div className='fixed top-0 bottom-0 w-full p-[5vw] bg-black overflow-scroll pointer-events-all z-[100]'>
             <Container maxWidth='md' className='relative p-0 '>
-                <button onClick={()=>setShowGallery(false)} className='flex items-center absolute top-0 right-0 bg-red-100 text-red-600 font-bold text-lg z-10 p-1 rounded-md translate-x-[50%] translate-y-[-50%]'>
+                <button onClick={()=>setShowGallery(false)} className='flex items-center w-full top-0 right-0 text-red-600 font-bold text-lg z-10 p-1 rounded-md mb-2'>
                     <FaWindowClose className='mr-1'/>
                     Close
                     </button>

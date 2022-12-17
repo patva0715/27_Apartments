@@ -5,14 +5,14 @@
         "price":1500,
         "bed":"King Bed",
         "tv":false,
-        "desc":"Room with a private bathroom & kitchen - refrigerator, dining table and TV. Includes all basic amenities."
+        "desc":"Room with a private bathroom & kitchenette - refrigerator, dining table and TV. Includes all basic amenities."
     },{
         "name":"Family",
         "measurement":55,
         "price":3000,
         "bed":"Cali King Bed",
         "tv":true,
-        "desc":"Everything our regular room offers plus a balcony and"
+        "desc":"Everything our regular room offers. Features a balcony and a larger kitchen."
     }
    
 ],

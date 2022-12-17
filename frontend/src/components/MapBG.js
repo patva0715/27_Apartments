@@ -351,7 +351,7 @@ function MyComponent({ showMap }) {
         bounds.extend(center)
 
         map.fitBounds(bounds);
-        map.setCenter(center)
+        // map.setCenter(center)
         // map.setZoom(1)
     }
 
