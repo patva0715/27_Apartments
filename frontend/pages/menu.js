@@ -58,11 +58,11 @@ const Menu = () => {
                 MENU</h1>
             <div className=' flex flex-wrap'>
                 {foods.map((food, idx) => (
-                    <div className='basis-[100%]'>
+                    <div className='basis-[100%]' key={idx}>
                         <h2 className='text-[1.5rem] basis-full mt-2 font-semibold'>{food.title}</h2>
                         <di key={idx} className='flex flex-wrap basis-full items-center'>
                             {food.set.map((set, idx) => (
-                                <div className='basis-full flex '>
+                                <div className='basis-full flex ' key={idx}>
                                     <h2 className='grow p-2 px-4'>{set.name}</h2>
                                     <h2 className='opacity-50'>₱{set.price}</h2>
                                 </div>
