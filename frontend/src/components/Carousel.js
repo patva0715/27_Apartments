@@ -67,7 +67,7 @@ const Carousel = () => {
 
             </div>
 
-            <div className='absolute top-4 z-20 right-4 flex gap-2 text-black text-[2rem] lg:text-[30px]'>
+            <div className='absolute top-4 z-20 right-4 flex gap-2 text-black text-[2rem]  lg:text-[30px]'>
                 <button onClick={()=>handleChange(-1)}><BsFillArrowLeftCircleFill/></button>
                 <button onClick={()=>handleChange(1)}><BsFillArrowRightCircleFill/></button>
             </div>

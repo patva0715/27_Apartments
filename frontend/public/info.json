@@ -5,7 +5,7 @@
         "price":1500,
         "bed":"King Bed",
         "tv":false,
-        "desc":"Room with a private bathroom & kitchenette - refrigerator, dining table and TV. Includes all basic amenities."
+        "desc":"Room with a private bathroom & kitchenette. Includes all basic amenities plus refrigerator, dining table and TV."
     },{
         "name":"Family",
         "measurement":55,

@@ -55,7 +55,7 @@ export default function Home({ showMap, setShowMap }) {
                     <Card room={room} key={idx} setShowGallery={setShowGallery} />
                   ))}
                 </div>
-                <div className='basis-[15%] hidden md:block'>
+                <div className='basis-[20%] hidden md:block'>
                   <div className='border-2 p-4 rounded-md md:rounded-xl flex flex-col overflow-hidden bg-white bg-opacity-70 h-full'>
                     <h2 className='text-md lg:text-[25px] lg:leading-[32px] font-semibold mb-1'>Amenities</h2>
                     {info.services.map((service, idx) => (
