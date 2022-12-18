@@ -24,12 +24,12 @@ const Footer = () => {
                     </div>
                     <a
                     href='https://www.patrickvee.com/'
-                        target="_blank"
+                        // target=""
                         rel="noopener noreferrer"
-                        className='flex items-center gap-2 underline'
+                        className='flex items-center gap-2 underline opacity-60'
                     >
                         <AiOutlineThunderbolt />
-                        <span>by pv.com</span>
+                        <span>patrickvee.com</span>
                     </a>
                 </div>
             </Container>

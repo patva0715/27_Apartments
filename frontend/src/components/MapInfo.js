@@ -15,8 +15,8 @@ const POI = [{
 ]
 const MapInfo= () => {
   return (
-    <div className='fixed p-2 top-20 right-10 bg-black text-white z-10 rounded-md'>
-        <h1 className=' text-md lg:text-[20px] mb-4'>Point of Interest</h1>
+    <div className='fixed p-2 top-20 right-10 bg-black text-white z-10 rounded-md opacity-10'>
+        <h1 className=' text-md lg:text-[20px] mb-1'>Point of Interest</h1>
         <ul className='text-md lg:text-[17px] lg:leading-[22px]'>
             {POI.map((item,idx)=>(
                 <li key={idx} className='flex text-sm lg:text-[18px] lg:leading-[22px] mb-2'>

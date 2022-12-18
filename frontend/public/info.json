@@ -1,34 +1,123 @@
 {
-    "rooms":[{
-        "name":"Regular",
-        "measurement":40,
-        "price":1500,
-        "bed":"King Bed",
-        "tv":false,
-        "desc":"Room with a private bathroom & kitchenette. Includes all basic amenities plus refrigerator, dining table and TV."
-    },{
-        "name":"Family",
-        "measurement":55,
-        "price":3000,
-        "bed":"Cali King Bed",
-        "tv":true,
-        "desc":"Everything our regular room offers. Features a balcony and a larger kitchen."
-    }
-   
-],
-    "services":[{
-        "name":"kitchen"
-    },{
-        "name":"shower"
-    },{
-        "name":"wifi"
-    }
+    "rooms": [
+        {
+            "name": "Regular",
+            "measurement": 40,
+            "price": 1500,
+            "bed": "King Bed",
+            "tv": false,
+            "desc": "Room with a private bathroom & kitchenette. Includes all basic amenities plus refrigerator, dining table and TV."
+        },
+        {
+            "name": "Family",
+            "measurement": 55,
+            "price": 3000,
+            "bed": "Cali King Bed",
+            "tv": true,
+            "desc": "Everything our regular room offers. Features a balcony and a larger kitchen."
+        }
+    ],
+    "services": [
+        {
+            "name": "kitchen"
+        },
+        {
+            "name": "shower"
+        },
+        {
+            "name": "wifi"
+        },
 
-    ,{
-        "name":"breakfast"
-    },{
-        "name":"parking"
-    },{
-        "name":"aircon"
-    }]
+        {
+            "name": "breakfast"
+        },
+        {
+            "name": "parking"
+        },
+        {
+            "name": "aircon"
+        }
+    ],
+    "pointsOfInterest": [
+        {
+            "name": "7-Eleven",
+            "distance": ".17",
+            "coordinate": {
+                "lat": 17.86694872286288,
+                "lng": 120.45789897915579
+            },
+            "time": 2
+        },
+        {
+            "name": "Gas",
+            "distance": 1,
+            "coordinate": {
+                "lat": 17.859304849251853,
+                "lng": 120.45403437541616
+            },
+            "time": 2
+        },
+        {
+            "name": "Beach",
+            "distance": 1,
+            "coordinate": {
+                "lat": 17.87617348489904,
+                "lng": 120.44916644455488
+            },
+            "time": 2
+        },{
+            "name":"Infinitea",
+            "distance":"11",
+            "coordinate":{
+                "lat":17.85930734418949, 
+                "lng":120.4540357630504
+            },
+            "time":"2"
+        },
+        {
+            "name": "Playa Tropical Resort",
+            "distance": "19",
+            "coordinate": {
+                "lat": 17.99667278577341,
+                "lng": 120.4990612724596
+            },
+            "time": 2
+        },
+        {
+            "name": "Vigan",
+            "distance": "40",
+            "coordinate": {
+                "lat": 17.570527441418868,
+                "lng": 120.38699708621502
+            },
+            "time":"10"
+        },
+        {
+            "name": "Sand Dunes",
+            "distance": "40",
+            "coordinate": {
+                "lat": 18.140676539152672,
+                "lng": 120.51726928867616
+            },
+            "time":"10"
+        },
+        {
+            "name": "Poro Island",
+            "distance": "40",
+            "coordinate": {
+                "lat": 17.79514257832246,
+                "lng": 120.38836597572376
+            },
+            "time":"10"
+        },
+        {
+            "name": "Robinson Supermarket",
+            "distance": "40",
+            "coordinate": {
+                "lat": 18.179651208781834,
+                "lng": 120.59318549918656
+            },
+            "time":"10"
+        }
+    ]
 }

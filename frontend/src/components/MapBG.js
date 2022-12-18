@@ -1,79 +1,10 @@
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import MapInfo from './MapInfo';
 
-const locationSets = [{
-    title: 'close',
-    locations: [{
-        name: '',
-        coordinate: {
-            lat: 17.86694872286288,
-            lng: 120.45789897915579
-        },
-        icon: 'https://img.icons8.com/external-tal-revivo-color-tal-revivo/30/null/external-7-eleven-is-your-go-to-convenience-store-for-food-snacks-hot-and-cold-beverages-food-color-tal-revivo.png'
-    },{
-        name:'Flying V',
-        coordinate:{
-            lat: 17.867563350402587, 
-            lng: 120.45865314365042
-        }
-    },
-]
-}
-    , {
-    title: 'near',
-    locations: [{
-        name: '7-Eleven',
-        coordinate: {
-            lat: 17.86694872286288,
-            lng: 120.45789897915579
-        },
-        icon: 'https://img.icons8.com/external-tal-revivo-color-tal-revivo/30/null/external-7-eleven-is-your-go-to-convenience-store-for-food-snacks-hot-and-cold-beverages-food-color-tal-revivo.png'
-    }, {
-        name: 'Infinitea',
-        coordinate: {
-            lat: 17.859304849251853,
-            lng: 120.45403437541616
-        },
-        icon: '../../public/icons/infinitea.png'
-    }, {
-        name: 'Cabantalan Beach',
-        coordinate: {
-            lat: 17.87617348489904,
-            lng: 120.44916644455488
-        }
-    }]
-}, {
-    title: 'far',
-    locations: [{
-        name: 'Vigan',
-        coordinate: {
-            lat: 17.570527441418868,
-            lng: 120.38699708621502
-        }
-    }, {
-        name: 'Sand Dunes',
-        coordinate: {
-            lat: 18.140676539152672,
-            lng: 120.51726928867616
-        }
-    }, {
-        name: 'Poro Island',
-        coordinate: {
-            lat: 17.79514257832246,
-            lng: 120.38836597572376
-        }
-    }, {
-        name: 'Robinson Supermarket',
-        coordinate: {
-            lat: 18.179651208781834,
-            lng: 120.59318549918656
-        }
-    }]
-}]
 const containerStyle = {
     width: '100vw',
-    height: '102vh',
+    height: '100vh',
     zIndex: '0',
 };
 const center = {
@@ -322,8 +253,7 @@ const mapStyle = [
     }
 ]
 
-function MyComponent({ showMap }) {
-    const [activeIndex, setActiveIndex] = useState(0)
+function MyComponent({ showMap, visibleLocations }) {
     const [map, setMap] = useState(null)
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -342,19 +272,19 @@ function MyComponent({ showMap }) {
         setMap(null)
     }, [])
 
-    const handleZoom = () => {
-        setActiveIndex(state => (state + 1) % locationSets.length)
-        var bounds = new google.maps.LatLngBounds();
-        for (var i = 0; i < locationSets[(activeIndex + 1) % locationSets.length].locations.length; i++) {
-            bounds.extend(locationSets[(activeIndex + 1) % locationSets.length].locations[i].coordinate);
+    useEffect(() => {
+        // if (!showMap && map) map.setCenter(center)
+    }, [showMap])
+    useEffect(() => {
+        if (map) {
+            var bounds = new google.maps.LatLngBounds();
+            for (let i = 0; i < visibleLocations.length; i++) {
+                bounds.extend(visibleLocations[i].coordinate)
+            }
+            bounds.extend(center)
+            map.fitBounds(bounds);
         }
-        bounds.extend(center)
-
-        map.fitBounds(bounds);
-        // map.setCenter(center)
-        // map.setZoom(1)
-    }
-
+    }, [visibleLocations, map])
     return isLoaded ? (
         <>
             <div style={{ opacity: showMap ? 1 : .4 }} className='duration-300 fixed z-10'>
@@ -362,7 +292,7 @@ function MyComponent({ showMap }) {
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
-                    zoom={showMap ? 16 : 17}
+                    // zoom={showMap ? 16 : 17}
                     onLoad={onLoad}
                     onUnmount={onUnmount}
                     options={{
@@ -377,17 +307,22 @@ function MyComponent({ showMap }) {
                 >
                     { /* Child components, such as markers, info windows, etc. */}
                     <>
-                        {locationSets[activeIndex].locations.map((location, index) => (
+                        {visibleLocations.map((location, index) => (
                             <Marker
                                 icon={{
                                     scaledSize: new google.maps.Size(20, 20),
-                                    url: location.icon || 'https://img.icons8.com/office/50/null/100-percents.png',
+                                    url: location.icon || 'https://img.icons8.com/sf-regular-filled/30/null/pin.png',
                                 }}
                                 position={{
                                     lat: location.coordinate.lat,
                                     lng: location.coordinate.lng
                                 }}
-                                label={location.name}
+                                label= {{
+                                    text: location.name,
+                                    color: 'red',
+                                    fontSize: '12px',
+                                    className: 'marker-position',
+                                }}
                                 key={index}
                             />
                         ))}
@@ -401,9 +336,7 @@ function MyComponent({ showMap }) {
                 </GoogleMap>
 
             </div>
-            {showMap ?
-                <button className='p-2 fixed bottom-4 left-4 z-30 bg-black text-white rounded-md' onClick={handleZoom}>Next</button>
-                : <></>}
+
         </>
     ) : <></>
 }

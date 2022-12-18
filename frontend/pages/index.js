@@ -8,7 +8,7 @@ import Footer from '../src/components/Footer';
 import { SiAirbnb } from 'react-icons/si'
 import info from '../public/info.json'
 import Carousel from '../src/components/Carousel';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Overlay from '../src/components/Overlay';
 import Divider from '../src/components/Divider';
 import ServiceCard from '../src/components/ServiceCard';
@@ -17,6 +17,9 @@ import Gallery from '../src/components/Gallery';
 export default function Home({ showMap, setShowMap }) {
   const [showOverlay, setShowOverlay] = useState(false)
   const [showGallery, setShowGallery] = useState(false)
+  useEffect(()=>{
+    setShowMap(false)
+  },[])
   return (
     <>
       <Head>
