@@ -1,7 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { Box, Button, Container, Fade, Typography } from '@mui/material'
+import {  Container, Fade } from '@mui/material'
 import Header from '../src/components/Header';
 import Card from '../src/components/Card';
 import Footer from '../src/components/Footer';

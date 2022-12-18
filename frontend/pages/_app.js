@@ -1,4 +1,4 @@
-import { Box, Button } from '@mui/material'
+import { Box, } from '@mui/material'
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import MapBG from '../src/components/MapBG'
@@ -18,12 +18,12 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com" /> */}
+        {/* <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> */}
+        {/* <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" /> */}
       </Head>
 
-      <MapBG showMap={showMap} visibleLocations={visibleLocations}/>
+      {/* <MapBG showMap={showMap} visibleLocations={visibleLocations}/> */}
       <Box id='gradientBg' style={{ display: showMap ? 'none' : 'block' }} />
 
       <Box className='fixed z-20 w-[100vw] overflow-scroll' style={{ height, maxHeight: height }}>

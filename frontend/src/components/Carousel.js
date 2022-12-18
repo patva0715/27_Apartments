@@ -7,15 +7,15 @@ const images = [
 ]
 const className = 'object-cover absolute w-full h-full top-[-0%] grayscale-[.8]'
 const Images = [
-    ({ style }) => <animated.img style={{ ...style, zIndex:0 }} className={className}
-        src='https://images.pexels.com/photos/430216/pexels-photo-430216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    ({ style }) => <animated.img alt='room picture' style={{ ...style, zIndex:0 }} className={className}
+        src='/image1.webp'
     />,
-    ({ style }) => <animated.img style={{ ...style }} className={className}
-        src='https://images.pexels.com/photos/813692/pexels-photo-813692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    ({ style }) => <animated.img alt='room picture' style={{ ...style }} className={className}
+        src='/image2.webp'
 
     />,
-    ({ style }) => <animated.img style={{ ...style }} className={className}
-        src='https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    ({ style }) => <animated.img alt='room picture' style={{ ...style }} className={className}
+        src='/image3.webp'
     />,
 ]
 const Carousel = () => {
