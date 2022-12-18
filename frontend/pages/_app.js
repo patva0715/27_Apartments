@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <MapBG showMap={showMap} visibleLocations={visibleLocations}/>
-      {/* <Box id='gradientBg' style={{ display: showMap ? 'none' : 'block' }} /> */}
+      <Box id='gradientBg' style={{ display: showMap ? 'none' : 'block' }} />
 
       <Box className='fixed z-20 w-[100vw] overflow-scroll' style={{ height, maxHeight: height }}>
 

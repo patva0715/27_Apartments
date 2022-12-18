@@ -266,6 +266,7 @@ function MyComponent({ showMap, visibleLocations }) {
         // map.fitBounds(bounds);
         // map.setZoom(showMap?14:17)
         setMap(map)
+        // map.setZoom(10)
     }, [showMap])
 
     const onUnmount = React.useCallback(function callback(map) {
@@ -273,10 +274,14 @@ function MyComponent({ showMap, visibleLocations }) {
     }, [])
 
     useEffect(() => {
-        // if (!showMap && map) map.setCenter(center)
-    }, [showMap])
+        if ( !showMap&&map) {
+            map.setCenter(center)
+            map.setZoom(16)
+        }
+    }, [showMap,map])
+ 
     useEffect(() => {
-        if (map) {
+        if (map&&visibleLocations.length>0) {
             var bounds = new google.maps.LatLngBounds();
             for (let i = 0; i < visibleLocations.length; i++) {
                 bounds.extend(visibleLocations[i].coordinate)
@@ -292,7 +297,7 @@ function MyComponent({ showMap, visibleLocations }) {
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
-                    // zoom={showMap ? 16 : 17}
+                    zoom={16}
                     onLoad={onLoad}
                     onUnmount={onUnmount}
                     options={{

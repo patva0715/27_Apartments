@@ -6,7 +6,7 @@
             "price": 1500,
             "bed": "King Bed",
             "tv": false,
-            "desc": "Room with a private bathroom & kitchenette. Includes all basic amenities plus refrigerator, dining table and TV."
+            "desc": "Room with a private bathroom & kitchenette. Includes all basic amenities plus refrigerator, dining table and a smart TV."
         },
         {
             "name": "Family",
@@ -58,7 +58,7 @@
             "time": 2
         },
         {
-            "name": "Beach",
+            "name": "Cabangtalan Beach",
             "distance": 1,
             "coordinate": {
                 "lat": 17.87617348489904,
