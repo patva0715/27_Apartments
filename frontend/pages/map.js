@@ -13,8 +13,9 @@ const rangeOptions = [{
     max: 50
 }]
 
-const MapInfo = ({ setShowMap, range, setRange, setVisibleLocations }) => {
-    const [visiblePoints, setVisiblePoints] = useState([])
+const MapInfo = ({ setShowMap, setVisibleLocations }) => {
+  const [range, setRange] = useState(0)
+  const [visiblePoints, setVisiblePoints] = useState([])
     const handleRangeChange = (action) => {
         let max = rangeOptions[range + action].max
         let min = rangeOptions[range + action].min
