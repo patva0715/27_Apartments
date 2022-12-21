@@ -312,7 +312,7 @@ function MyComponent({ showMap, visibleLocations }) {
                 >
                     { /* Child components, such as markers, info windows, etc. */}
                     <>
-                        {visibleLocations.map((location, index) => (
+                        {visibleLocations.map((location, index) => location.name==='hidden'?<></>:(
                             <Marker
                                 icon={{
                                     scaledSize: new google.maps.Size(20, 20),

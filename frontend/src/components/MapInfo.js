@@ -21,7 +21,7 @@ const MapInfo= () => {
             {POI.map((item,idx)=>(
                 <li key={idx} className='flex text-sm lg:text-[18px] lg:leading-[22px] mb-2'>
                     <span className='grow mr-4'>{item.name}</span>
-                    <span className=''>{item.distance} {`(${item.time} min)`}</span>
+                    <span className=''>{item.distance}km {`(${item.time} min)`}</span>
                 </li>
             ))}
         </ul>

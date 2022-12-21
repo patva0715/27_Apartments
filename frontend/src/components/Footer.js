@@ -29,7 +29,7 @@ const Footer = () => {
                         className='flex items-center gap-2 underline opacity-50'
                     >
                         <AiOutlineThunderbolt />
-                        <span>patrickvee.com</span>
+                        <span>patrickvee</span>
                     </a>
                 </div>
             </Container>
