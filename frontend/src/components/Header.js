@@ -5,7 +5,7 @@ import Link  from 'next/link';
 import { FiMap } from 'react-icons/fi'
 const Header = ({ showMap, setShowMap }) => {
     return (
-        <header className={` ${showMap ? 'bg-black text-white' : 'text-black'} duration-300`}>
+        <header >
             <div className={`max-w-[900px] mx-auto px-4 py-4 flex flex-nowrap items-center`}>
                 <h1 className='text-[5vw] md:text-[30px] grow'>
                     <a href="https://nextjs.org" className='flex items-center font-semibold'>

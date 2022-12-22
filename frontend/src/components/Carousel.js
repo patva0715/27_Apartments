@@ -12,10 +12,12 @@ const Images = [
     />,
     ({ style }) => <animated.img alt='room picture' style={{ ...style }} className={className}
         src='/images/regular1.jpg'
-
     />,
     ({ style }) => <animated.img alt='room picture' style={{ ...style }} className={className}
         src='/images/regular3.jpg'
+    />,
+    ({ style }) => <animated.img alt='room picture' style={{ ...style }} className={className}
+        src='/images/family1.jpg'
     />,
 ]
 const Carousel = () => {
@@ -23,11 +25,11 @@ const Carousel = () => {
     const intervalRef=useRef(null)
     const handleChange = (move) =>{
         if (intervalRef.current)clearInterval(intervalRef.current)
-        intervalRef.current=setInterval(()=>set(state=>(state+1)%3),5000)
-        const loop = index===0 || index===2?true:false
-        if (loop && move===1 && index===2) return set(0)
-        else if (loop && move===-1 && index===0) return set(2)
-        else set(state=>(state+move)%3)
+        intervalRef.current=setInterval(()=>set(state=>(state+1)%Images.length),5000)
+        const loop = index===0 || index===Images.length-1?true:false
+        if (loop && move===1 && index===Images.length-1) return set(0)
+        else if (loop && move===-1 && index===0) return set(Images.length-1)
+        else set(state=>(state+move)%Images.length)
     }
     const transRef = useSpringRef()
     const transitions = useTransition(index, {
@@ -41,7 +43,7 @@ const Carousel = () => {
         transRef.start()
     }, [index])
     useEffect(()=>{
-        intervalRef.current=setInterval(()=>set(state=>(state+1)%3),5000)
+        intervalRef.current=setInterval(()=>set(state=>(state+1)%Images.length),5000)
         return (()=>clearInterval(intervalRef.current))
     },[])
     return (

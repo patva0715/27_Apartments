@@ -20,13 +20,13 @@ const Footer = () => {
                     </div>
                     <div className='flex items-center gap-2'>
                         <BsPhone className='lg:text-[14px]' />
-                        <span>0906558186</span>
+                        <span>09199333672</span>
                     </div>
                     <a
                     href='https://www.patrickvee.com/'
                         // target=""
                         rel="noopener noreferrer"
-                        className='flex items-center gap-2 underline opacity-20 text-xs'
+                        className='flex items-center gap-2 underline opacity-50 text-xs'
                     >
                         <AiOutlineThunderbolt />
                         <span>patrickvee</span>
