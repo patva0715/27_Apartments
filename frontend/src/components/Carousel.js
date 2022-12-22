@@ -8,14 +8,14 @@ const images = [
 const className = 'object-cover absolute w-full h-full top-[-0%] grayscale-[.8]'
 const Images = [
     ({ style }) => <animated.img alt='room picture' style={{ ...style, zIndex:0 }} className={className}
-        src='/image1.webp'
+        src='/images/regular1.jpg'
     />,
     ({ style }) => <animated.img alt='room picture' style={{ ...style }} className={className}
-        src='/image2.webp'
+        src='/images/regular2.jpg'
 
     />,
     ({ style }) => <animated.img alt='room picture' style={{ ...style }} className={className}
-        src='/image3.webp'
+        src='/images/regular3.jpg'
     />,
 ]
 const Carousel = () => {
