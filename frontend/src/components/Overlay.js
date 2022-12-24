@@ -11,13 +11,13 @@ const Overlay = ({ showOverlay, setShowOverlay }) => {
                 <button onClick={() => setShowOverlay(false)} className='text-red-500  text-[35px] rounded-md  bg-white translate-x-[50%] translate-y-[-50%] aspect-square  text-center absolute top-0 right-0'>
                     <IoClose />
                 </button>
-                <button className='p-2 bg-orange-400 rounded-md text-[3.7vw]  flex items-center flex-wrap justify-center w-full '>
+                <button className='p-2 bg-orange-400 rounded-md text-[3.7vw] lg:text-[16px]  flex items-center flex-wrap justify-center w-full '>
                     <SiAirbnb className='mr-2' />
                     <h1>Book via AirBnb</h1>
-                    <span className='text-[2vw] lg:text-[12px] basis-full'>*Not Available</span>
+                    <span className='text-[2vw] lg:text-[12px] basis-full opacity-50'>*Not Available</span>
                 </button>
                 <Divider />
-                <button className='p-2 bg-green-400 rounded-md flex text-[3.7vw] justify-center items-center flex-wrap w-full'>
+                <button className='p-2 bg-green-400 rounded-md flex text-[3.7vw] lg:text-[16px] justify-center items-center flex-wrap w-full'>
                     <BsFillTelephoneFill className='mr-2' /><span className=''>09199333672</span>
                     <span className='opacity-50 basis-full text-[2.8vw] lg:text-[14px]'>Reserve via phone</span>
 

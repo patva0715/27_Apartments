@@ -41,17 +41,17 @@ export default function Home({ showMap, setShowMap }) {
             {/* DIVIDER AMENITY SECTION */}
             <div className='mt-8 md:mt-0 block md:hidden'>
               <Divider title='Amenities' />
-              <div className=' p-3 rounded-md md:rounded-xl flex w-full md:w-[40%] flex-wrap border-2 bg-white bg-opacity-70'>
+              <div className=' p-3 rounded-md md:rounded-xl flex w-full md:w-[40%] flex-wrap border-[1px] bg-white bg-opacity-70'>
                 {info.services.map((service, idx) => (
                   <ServiceCard service={service} key={idx} />
                 ))}
               </div>
             </div>
             {/* DIVIDER ROOM CATALOGUE */}
-            <div className=''>
+            <div className='mt-4'>
               <Divider title='Rooms' />
               <div className='flex gap-1'>
-                <div className='basis-[70%] grow flex flex-col gap-1 border-2 bg-white bg-opacity-70 rounded-md md:rounded-xl'>
+                <div className='basis-[70%] grow flex flex-col gap-1 border-[1px] bg-white bg-opacity-70 rounded-md md:rounded-xl'>
                   {info.rooms.map((room, idx) => (
                     <Card room={room} key={idx} setShowGallery={setShowGallery} />
                   ))}
