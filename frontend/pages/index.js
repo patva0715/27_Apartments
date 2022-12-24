@@ -27,7 +27,7 @@ export default function Home({ showMap, setShowMap }) {
       </Head>
       <Header showMap={showMap} setShowMap={setShowMap} />
 
-      <Container maxWidth='md' className='' >
+      <Container maxWidth='md' className='px-1' >
 
         <Fade in={!showMap} timeout={500}>
           <main>
@@ -41,7 +41,7 @@ export default function Home({ showMap, setShowMap }) {
             {/* DIVIDER AMENITY SECTION */}
             <div className='mt-8 md:mt-0 block md:hidden'>
               <Divider title='Amenities' />
-              <div className=' p-4 rounded-md md:rounded-xl flex w-full md:w-[40%] flex-wrap border-2 bg-white bg-opacity-70'>
+              <div className=' p-3 rounded-md md:rounded-xl flex w-full md:w-[40%] flex-wrap border-2 bg-white bg-opacity-70'>
                 {info.services.map((service, idx) => (
                   <ServiceCard service={service} key={idx} />
                 ))}

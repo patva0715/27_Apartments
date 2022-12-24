@@ -26,7 +26,7 @@ const Footer = () => {
                     href='https://www.patrickvee.com/'
                         // target=""
                         rel="noopener noreferrer"
-                        className='flex items-center gap-2 underline opacity-50 text-xs'
+                        className='flex items-center gap-2 underline opacity-10 text-xs'
                     >
                         <AiOutlineThunderbolt />
                         <span>patrickvee</span>

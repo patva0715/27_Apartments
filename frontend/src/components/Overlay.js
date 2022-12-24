@@ -3,6 +3,7 @@ import React from 'react'
 import { SiAirbnb } from 'react-icons/si'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import { IoClose } from 'react-icons/io5'
+
 const Overlay = ({ showOverlay, setShowOverlay }) => {
     return (
         <div onClick={()=>setShowOverlay(false)} style={{ opacity: showOverlay ? 1 : 0, pointerEvents: showOverlay ? 'all' : 'none' }} className='fixed top-0 bottom-0 w-full bg-black bg-opacity-80 p-[10%] flex items-center '>

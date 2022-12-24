@@ -8,16 +8,16 @@ const images = [
 const className = 'object-cover absolute w-full h-full top-[-0%] grayscale-[.2]'
 const Images = [
     ({ style }) => <animated.img alt='room picture' style={{ ...style, zIndex:0 }} className={className}
-        src='/images/main.webp'
+        src='/images/main.jpg'
     />,
     ({ style }) => <animated.img alt='room picture' style={{ ...style }} className={className}
-        src='/images/regular1.webp'
+        src='/images/regular1.jpg'
     />,
     ({ style }) => <animated.img alt='room picture' style={{ ...style }} className={className}
         src='/images/regular3.webp'
     />,
     ({ style }) => <animated.img alt='room picture' style={{ ...style }} className={className}
-        src='/images/family1.webp'
+        src='/images/family1.jpg'
     />,
 ]
 const Carousel = () => {
@@ -52,10 +52,10 @@ const Carousel = () => {
                 const Image = Images[i]
                 return <Image style={style} />
             })}
-            <div className='absolute z-10 p-3 md:p-10 duration-300 w-full'>
+            {/* <div className='absolute z-10 p-3 md:p-10 duration-300 w-full'>
                 <h1 className='text-left text-[6.45vw] lg:text-[60px] font-bold leading-none tracking-wider opacity-50'>Spaces<br />for rent</h1>
                 <p className='text-left mt-1 opacity-40 text-[3vw] lg:text-[21px]'>bed | kitchen | bath</p>
-            </div>
+            </div> */}
 
             <div className='hidden md:hidden flex-col absolute z-0 right-3 top-3 gap-3'>
                 {[0, 1, 2].map((item, idx) => (
