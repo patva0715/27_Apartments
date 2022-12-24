@@ -27,7 +27,7 @@ export default function Home({ showMap, setShowMap }) {
       </Head>
       <Header showMap={showMap} setShowMap={setShowMap} />
 
-      <Container maxWidth='md' className='px-1' >
+      <Container maxWidth='md' className='px-2' >
 
         <Fade in={!showMap} timeout={500}>
           <main>
