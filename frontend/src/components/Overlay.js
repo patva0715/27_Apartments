@@ -7,7 +7,7 @@ import { IoClose } from 'react-icons/io5'
 const Overlay = ({ showOverlay, setShowOverlay }) => {
     return (
         <div onClick={()=>setShowOverlay(false)} style={{ opacity: showOverlay ? 1 : 0, pointerEvents: showOverlay ? 'all' : 'none' }} className='fixed top-0 bottom-0 w-full bg-black bg-opacity-80 p-[10%] flex items-center '>
-            <Container maxWidth='sm' className='p-2 bg-white rounded-md relative flex flex-col' onClick={(e)=>{e.stopPropagation()}}>
+            <Container maxWidth='sm' className='p-2 bg-white rounded-md relative flex flex-col ' onClick={(e)=>{e.stopPropagation()}}>
                 <button onClick={() => setShowOverlay(false)} className='text-red-500  text-[35px] rounded-md  bg-white translate-x-[50%] translate-y-[-50%] aspect-square  text-center absolute top-0 right-0'>
                     <IoClose />
                     </button>

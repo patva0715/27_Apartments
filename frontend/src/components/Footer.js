@@ -10,7 +10,7 @@ const Footer = () => {
         <footer className='py-7 text-xs mt-10 text-black'>
             <Container maxWidth='md' className='text-sm lg:text-[15px] lg:leading-[18px] opacity-80 px-8'>
                 <div className='flex flex-col gap-2 lg:gap-[10px]'>
-                    <Link href='menu' className='flex items-center underline'>
+                    <Link href='menu' className='flex text-[4vw] font-[500] items-center underline'>
                         <GiKnifeFork className='mr-2' />
                         Food Menu
                     </Link>

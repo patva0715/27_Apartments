@@ -48,7 +48,7 @@ const foods = [{
     title: "Side Orders",
     set: [{
         name: "Miki",
-        price: 150
+        price: 80
     },]
 }]
 const Menu = () => {
