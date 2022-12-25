@@ -9,7 +9,7 @@ const images = [
 ]
 const photos = {
     'Regular': ['regular2.jpg','regular1.webp','regular3.webp','regular5.jpg','regular4.jpg'],
-    'Family': ['regular5.jpg','family1.jpg','family2.jpg']
+    'Family': ['regular4.jpg','family1.jpg','family2.jpg']
 }
 const Gallery = ({ showGallery, setShowGallery }) => {
     const router = useRouter()
