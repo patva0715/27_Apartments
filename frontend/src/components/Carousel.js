@@ -2,22 +2,33 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useTransition, animated, AnimatedProps, useSpringRef } from '@react-spring/web'
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs'
 import Image from 'next/image'
-// const imgSrc = ['main.jpg','regular1.jpg','regular3.jpg','family1.jpg']
+import img1 from '../../public/images/main.jpg'
+import img2 from '../../public/images/regular1.jpg'
+import img3 from '../../public/images/regular3.jpg'
+import img4 from '../../public/images/family1.jpg'
 
-const ImgComp = ({ style, src }) => {
-    return (
-        <>
-            <animated.div style={{ ...style }} className='object-cover absolute w-full h-full top-[-0%] grayscale-[.2]'>
-                <Image placeholder='blur' blurDataURL={`/images/${src}`}  fill={true} style={{objectFit:'cover'}} src={`/images/${src}`} />
-            </animated.div>
-        </>)
-}
-
+// const ImgComp = ({ style, src }) => {
+//     return (
+//         <>
+//             <animated.div style={{ ...style }} className='object-cover absolute w-full h-full top-[-0%] grayscale-[.2]'>
+//                 <Image placeholder='blur' fill={true} style={{ objectFit: 'cover' }} src={imgSrc[src]} />
+//             </animated.div>
+//         </>)
+// }
+const className = 'object-cover absolute w-full h-full top-[-0%] grayscale-[.2]'
 const Images = [
-    ({ style }) => <ImgComp style={style} src='main.jpg' />,
-    ({ style }) => <ImgComp style={style} src='regular1.jpg' />,
-    ({ style }) => <ImgComp style={style} src='regular3.jpg' />,
-    ({ style }) => <ImgComp style={style} src='family1.jpg' />,
+    ({ style }) => (<animated.div style={{ ...style }} className={className}>
+        <Image placeholder='blur' fill={true} style={{ objectFit: 'cover' }} src={img1} />
+    </animated.div>),
+    ({ style }) => (<animated.div style={{ ...style }} className={className}>
+        <Image placeholder='blur' fill={true} style={{ objectFit: 'cover' }} src={img2} />
+    </animated.div>),
+    ({ style }) => (<animated.div style={{ ...style }} className={className}>
+        <Image placeholder='blur' fill={true} style={{ objectFit: 'cover' }} src={img3} />
+    </animated.div>),
+    ({ style }) => (<animated.div style={{ ...style }} className={className}>
+        <Image placeholder='blur' fill={true} style={{ objectFit: 'cover' }} src={img4} />
+    </animated.div>),
 ]
 
 const Carousel = () => {
